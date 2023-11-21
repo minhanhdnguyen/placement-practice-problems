@@ -14,6 +14,8 @@ def replace(lst):
             lst[i] = 12
         elif lst[i] == "A":
             lst[i] = 13
+        else:
+            lst[i] = int(lst[i])
     return lst
 
 
