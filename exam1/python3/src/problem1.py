@@ -21,5 +21,17 @@ def itshotitscold(temperatures: List[int]) -> Tuple[int, int, int]:
         same, and the number of times the temperature went up.
 
     '''
-    # TODO: Implement this function.
-    pass
+    i = 1
+    up = 0
+    down = 0
+    same = 0
+    while i < len(temperatures):
+        if temperatures[i] > temperatures[i-1]:
+            up = up + 1
+        elif temperatures[i] < temperatures[i-1]:
+            down = down + 1
+        else:
+            same = same + 1
+        i = i + 1
+    
+    return down, same, up
