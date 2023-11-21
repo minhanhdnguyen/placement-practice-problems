@@ -18,5 +18,11 @@ def raindrops(measurements: List[int]) -> Union[int, None]:
         The average rainfall as a rounded down integer. If only negative
         measurements are given, the function returns None.
     '''
-    # TODO: Implement this function.
-    pass
+    lst = []
+    for x in measurements:
+        if x > 0:
+            lst.append(x)
+    if lst == []:
+        return None
+    else:
+        return int(sum(lst)/len(lst))
