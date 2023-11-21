@@ -19,6 +19,20 @@ def kmers(seq: str, k: int, k_mers: List[str]) -> List[int]:
             sequence. The counts should be in the same order as the k-mers in
             the k_mers list.
     '''
-    # TODO: Implement this function.
+    i = 0
+    kmers = {}
+    result = []
+    while i < len(seq)-(k-1):
+        if seq[i:i+k] not in kmers:
+            kmers[seq[i:i+k]] = 0
+        if seq[i:i+k] in kmers:
+            kmers[seq[i:i+k]] += 1
+        i += 1
+    
+    for x in k_mers:
+        if x in kmers:
+            result.append(kmers[x])
+        else:
+            result.append(0)
 
-    return []
+    return result
